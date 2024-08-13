@@ -42,8 +42,11 @@ body {
 
 /* line 1, sass/_features.scss */
 .features {
-  background-color: #aaa;
-  grid-column: center-start / center-end; }
+  grid-column: center-start / center-end;
+  margin: 15rem 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6rem; }
 
 /* line 2, sass/_story.scss */
 .story__pictures {
