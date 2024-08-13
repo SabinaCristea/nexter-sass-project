@@ -21,40 +21,51 @@ body {
 /* line 37, sass/_base.scss */
 .container {
   display: grid;
-  grid-template-rows: 80vh min-content 40vh repeat(3, min-content); }
+  grid-template-rows: 80vh min-content 40vh repeat(3, min-content);
+  grid-template-columns: [sidebar-start] 8rem [sidebar-end full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] 1fr [full-end]; }
 
 /* line 1, sass/_sidebar.scss */
 .sidebar {
-  background-color: #c69963; }
+  background-color: #c69963;
+  grid-column: sidebar-start / sidebar-end;
+  grid-row: 1/-1; }
 
 /* line 1, sass/_header.scss */
 .header {
-  background-color: #54483a; }
+  background-color: #54483a;
+  grid-column: full-start / col-end 6; }
 
 /* line 1, sass/_realtors.scss */
 .realtors {
-  background-color: #101d2c; }
+  background-color: #101d2c;
+  grid-column: col-start 7 / full-end; }
 
 /* line 1, sass/_features.scss */
 .features {
-  background-color: #aaa; }
+  background-color: #aaa;
+  grid-column: center-start / center-end; }
 
 /* line 2, sass/_story.scss */
 .story__pictures {
-  background-color: #c69963; }
+  background-color: #c69963;
+  grid-column: full-start / col-end 4; }
 
-/* line 6, sass/_story.scss */
+/* line 7, sass/_story.scss */
 .story__content {
-  background-color: #f9f7f6; }
+  background-color: #f9f7f6;
+  grid-column: col-start 5 / full-end; }
 
 /* line 1, sass/_homes.scss */
 .homes {
-  background-color: #101d2c; }
+  background-color: #101d2c;
+  grid-column: center-start / center-end; }
 
 /* line 1, sass/_gallery.scss */
 .gallery {
-  background-color: #54483a; }
+  background-color: #54483a;
+  grid-column: full-start / full-end; }
 
 /* line 1, sass/_footer.scss */
 .footer {
-  background-color: #101d2c; }
+  background-color: #101d2c;
+  grid-column: full-start / full-end; }
