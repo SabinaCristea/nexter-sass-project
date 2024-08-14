@@ -24,6 +24,21 @@ body {
   grid-template-rows: 80vh min-content 40vh repeat(3, min-content);
   grid-template-columns: [sidebar-start] 8rem [sidebar-end full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] 1fr [full-end]; }
 
+/* line 1, sass/_typography.scss */
+.heading-1, .heading-2, .heading-3, .heading-4 {
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 400; }
+
+/* line 15, sass/_typography.scss */
+.heading-4 {
+  font-size: 1.9rem; }
+  /* line 19, sass/_typography.scss */
+  .heading-4--light {
+    color: #f9f7f6; }
+  /* line 23, sass/_typography.scss */
+  .heading-4--dark {
+    color: #54483a; }
+
 /* line 1, sass/_sidebar.scss */
 .sidebar {
   background-color: #c69963;
@@ -45,8 +60,26 @@ body {
   grid-column: center-start / center-end;
   margin: 15rem 0;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 6rem; }
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  gap: 6rem;
+  align-items: start; }
+
+/* line 14, sass/_features.scss */
+.feature {
+  display: grid;
+  grid-template-columns: min-content 1fr;
+  row-gap: 1.5rem;
+  column-gap: 2.5rem; }
+  /* line 20, sass/_features.scss */
+  .feature__icon {
+    fill: #c69963;
+    width: 4.5rem;
+    height: 4.5rem;
+    grid-row: 1 / span 2;
+    transform: translateY(-1rem); }
+  /* line 28, sass/_features.scss */
+  .feature__text {
+    font-size: 1.7rem; }
 
 /* line 2, sass/_story.scss */
 .story__pictures {
