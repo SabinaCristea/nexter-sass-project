@@ -175,7 +175,30 @@ body {
 /* line 1, sass/_realtors.scss */
 .realtors {
   background-color: #101d2c;
-  grid-column: col-start 7 / full-end; }
+  grid-column: col-start 7 / full-end;
+  padding: 3rem;
+  display: grid;
+  align-content: center;
+  justify-content: center;
+  justify-items: center;
+  row-gap: 2rem; }
+  /* line 13, sass/_realtors.scss */
+  .realtors__list {
+    display: grid;
+    grid-template-columns: min-content max-content;
+    column-gap: 2rem;
+    row-gap: 5vh;
+    align-items: center; }
+  /* line 21, sass/_realtors.scss */
+  .realtors__img {
+    width: 7rem;
+    border-radius: 50%;
+    display: block; }
+  /* line 27, sass/_realtors.scss */
+  .realtors__sold {
+    text-transform: uppercase;
+    color: #aaa;
+    margin-top: -3px; }
 
 /* line 1, sass/_features.scss */
 .features {
