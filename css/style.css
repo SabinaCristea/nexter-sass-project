@@ -29,35 +29,41 @@ body {
   font-family: "Josefin Sans", sans-serif;
   font-weight: 400; }
 
-/* line 9, sass/_typography.scss */
+/* line 6, sass/_typography.scss */
+.heading-1 {
+  font-size: 4.5rem;
+  color: #f9f7f6;
+  line-height: 1; }
+
+/* line 12, sass/_typography.scss */
 .heading-2 {
   font-size: 4rem;
   font-style: italic;
   line-height: 1; }
-  /* line 15, sass/_typography.scss */
+  /* line 18, sass/_typography.scss */
   .heading-2--light {
     color: #f9f7f6; }
-  /* line 19, sass/_typography.scss */
+  /* line 22, sass/_typography.scss */
   .heading-2--dark {
     color: #54483a; }
 
-/* line 23, sass/_typography.scss */
+/* line 26, sass/_typography.scss */
 .heading-3 {
   font-size: 1.6rem;
   color: #c69963;
   text-transform: uppercase; }
 
-/* line 29, sass/_typography.scss */
+/* line 32, sass/_typography.scss */
 .heading-4 {
   font-size: 1.9rem; }
-  /* line 33, sass/_typography.scss */
+  /* line 36, sass/_typography.scss */
   .heading-4--light {
     color: #f9f7f6; }
-  /* line 37, sass/_typography.scss */
+  /* line 40, sass/_typography.scss */
   .heading-4--dark {
     color: #54483a; }
 
-/* line 42, sass/_typography.scss */
+/* line 45, sass/_typography.scss */
 .btn {
   background-color: #c69963;
   color: #fff;
@@ -69,23 +75,23 @@ body {
   padding: 1.8rem 3rem;
   cursor: pointer;
   transition: all 0.2s; }
-  /* line 54, sass/_typography.scss */
+  /* line 57, sass/_typography.scss */
   .btn:hover {
     background-color: #b28451; }
 
-/* line 59, sass/_typography.scss */
+/* line 62, sass/_typography.scss */
 .mb-sm {
   margin-bottom: 2rem; }
 
-/* line 63, sass/_typography.scss */
+/* line 66, sass/_typography.scss */
 .mb-md {
   margin-bottom: 3rem; }
 
-/* line 67, sass/_typography.scss */
+/* line 70, sass/_typography.scss */
 .mb-lg {
   margin-bottom: 4rem; }
 
-/* line 71, sass/_typography.scss */
+/* line 74, sass/_typography.scss */
 .mb-hg {
   margin-bottom: 8rem; }
 
@@ -93,12 +99,78 @@ body {
 .sidebar {
   background-color: #c69963;
   grid-column: sidebar-start / sidebar-end;
-  grid-row: 1/-1; }
+  grid-row: 1/-1;
+  display: flex;
+  justify-content: center; }
+
+/* line 10, sass/_sidebar.scss */
+.nav-btn {
+  border: none;
+  border-radius: 0;
+  background-color: #fff;
+  height: 2px;
+  width: 4.5rem;
+  margin-top: 4rem; }
+  /* line 19, sass/_sidebar.scss */
+  .nav-btn::before, .nav-btn::after {
+    background-color: #fff;
+    height: 2px;
+    width: 4.5rem;
+    content: "";
+    display: block; }
+  /* line 28, sass/_sidebar.scss */
+  .nav-btn::before {
+    transform: translateY(-1.5rem); }
+  /* line 32, sass/_sidebar.scss */
+  .nav-btn::after {
+    transform: translateY(1.3rem); }
 
 /* line 1, sass/_header.scss */
 .header {
   background-color: #54483a;
-  grid-column: full-start / col-end 6; }
+  grid-column: full-start / col-end 6;
+  background-image: linear-gradient(rgba(16, 29, 44, 0.93), rgba(16, 29, 44, 0.93)), url(../img/hero.jpeg);
+  background-size: cover;
+  background-position: center;
+  padding: 8rem;
+  padding-top: 4rem;
+  display: grid;
+  grid-template-rows: 1fr min-content 6rem 1fr;
+  grid-template-columns: max-content;
+  row-gap: 1.5rem;
+  justify-content: center; }
+  /* line 21, sass/_header.scss */
+  .header__logo {
+    height: 3rem;
+    justify-self: center; }
+  /* line 26, sass/_header.scss */
+  .header__btn {
+    align-self: self-start;
+    justify-self: start; }
+  /* line 31, sass/_header.scss */
+  .header__seenon-text {
+    display: grid;
+    grid-template-columns: 1fr max-content 1fr;
+    column-gap: 1.5rem;
+    align-items: center;
+    font-size: 1.6rem;
+    color: #aaa; }
+    /* line 40, sass/_header.scss */
+    .header__seenon-text::before, .header__seenon-text::after {
+      content: "";
+      height: 1px;
+      display: block;
+      background-color: currentColor; }
+  /* line 49, sass/_header.scss */
+  .header__seenon-logos {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 3rem;
+    justify-items: center; }
+    /* line 55, sass/_header.scss */
+    .header__seenon-logos img {
+      height: 2.5rem;
+      filter: brightness(70%); }
 
 /* line 1, sass/_realtors.scss */
 .realtors {
