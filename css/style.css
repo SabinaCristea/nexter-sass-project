@@ -1,4 +1,4 @@
-/* line 17, sass/_base.scss */
+/* line 23, sass/_base.scss */
 *,
 *::before,
 *::after {
@@ -6,23 +6,36 @@
   padding: 0;
   box-sizing: inherit; }
 
-/* line 25, sass/_base.scss */
+/* line 31, sass/_base.scss */
 html {
   box-sizing: border-box;
   font-size: 62.5%; }
+  @media only screen and (max-width: 75em) {
+    /* line 31, sass/_base.scss */
+    html {
+      font-size: 50%; } }
 
-/* line 30, sass/_base.scss */
+/* line 40, sass/_base.scss */
 body {
   font-family: "Nunito", sans-serif;
   color: #6d5d4b;
   font-weight: 300;
   line-height: 1.6; }
 
-/* line 37, sass/_base.scss */
+/* line 47, sass/_base.scss */
 .container {
   display: grid;
   grid-template-rows: 80vh min-content 60vh repeat(3, min-content);
   grid-template-columns: [sidebar-start] 8rem [sidebar-end full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end]; }
+  @media only screen and (max-width: 62.5em) {
+    /* line 47, sass/_base.scss */
+    .container {
+      grid-template-rows: 6rem 80vh min-content 60vh repeat(3, min-content);
+      grid-template-columns: [full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end]; } }
+  @media only screen and (max-width: 50em) {
+    /* line 47, sass/_base.scss */
+    .container {
+      grid-template-rows: 6rem calc(100vh - 6rem); } }
 
 /* line 1, sass/_typography.scss */
 .heading-1, .heading-2, .heading-3, .heading-4 {
@@ -102,8 +115,15 @@ body {
   grid-row: 1/-1;
   display: flex;
   justify-content: center; }
+  @media only screen and (max-width: 62.5em) {
+    /* line 1, sass/_sidebar.scss */
+    .sidebar {
+      grid-column: 1/-1;
+      grid-row: 1/2;
+      justify-content: flex-end;
+      align-items: center; } }
 
-/* line 10, sass/_sidebar.scss */
+/* line 18, sass/_sidebar.scss */
 .nav-btn {
   border: none;
   border-radius: 0;
@@ -111,19 +131,30 @@ body {
   height: 2px;
   width: 4.5rem;
   margin-top: 4rem; }
-  /* line 19, sass/_sidebar.scss */
+  /* line 27, sass/_sidebar.scss */
   .nav-btn::before, .nav-btn::after {
     background-color: #fff;
     height: 2px;
     width: 4.5rem;
     content: "";
     display: block; }
-  /* line 28, sass/_sidebar.scss */
+  /* line 36, sass/_sidebar.scss */
   .nav-btn::before {
     transform: translateY(-1.5rem); }
-  /* line 32, sass/_sidebar.scss */
+  /* line 40, sass/_sidebar.scss */
   .nav-btn::after {
     transform: translateY(1.3rem); }
+  @media only screen and (max-width: 62.5em) {
+    /* line 18, sass/_sidebar.scss */
+    .nav-btn {
+      margin-top: 0;
+      margin-right: 3rem; }
+      /* line 48, sass/_sidebar.scss */
+      .nav-btn::before {
+        transform: translateY(-1.2rem); }
+      /* line 52, sass/_sidebar.scss */
+      .nav-btn::after {
+        transform: translateY(1rem); } }
 
 /* line 1, sass/_header.scss */
 .header {
@@ -135,19 +166,27 @@ body {
   padding: 8rem;
   padding-top: 4rem;
   display: grid;
-  grid-template-rows: 1fr min-content 6rem 1fr;
-  grid-template-columns: max-content;
+  grid-template-rows: 1fr min-content minmax(6rem, min-content) 1fr;
+  grid-template-columns: minmax(min-content, max-content);
   row-gap: 1.5rem;
   justify-content: center; }
-  /* line 21, sass/_header.scss */
+  @media only screen and (max-width: 50em) {
+    /* line 1, sass/_header.scss */
+    .header {
+      grid-column: 1/-1; } }
+  @media only screen and (max-width: 37.5em) {
+    /* line 1, sass/_header.scss */
+    .header {
+      padding: 5rem; } }
+  /* line 29, sass/_header.scss */
   .header__logo {
     height: 3rem;
     justify-self: center; }
-  /* line 26, sass/_header.scss */
+  /* line 34, sass/_header.scss */
   .header__btn {
     align-self: self-start;
     justify-self: start; }
-  /* line 31, sass/_header.scss */
+  /* line 39, sass/_header.scss */
   .header__seenon-text {
     display: grid;
     grid-template-columns: 1fr max-content 1fr;
@@ -155,21 +194,23 @@ body {
     align-items: center;
     font-size: 1.6rem;
     color: #aaa; }
-    /* line 40, sass/_header.scss */
+    /* line 48, sass/_header.scss */
     .header__seenon-text::before, .header__seenon-text::after {
       content: "";
       height: 1px;
       display: block;
       background-color: currentColor; }
-  /* line 49, sass/_header.scss */
+  /* line 57, sass/_header.scss */
   .header__seenon-logos {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     column-gap: 3rem;
-    justify-items: center; }
-    /* line 55, sass/_header.scss */
+    justify-items: center;
+    align-items: center; }
+    /* line 64, sass/_header.scss */
     .header__seenon-logos img {
-      height: 2.5rem;
+      max-height: 2.5rem;
+      max-width: 100%;
       filter: brightness(70%); }
 
 /* line 1, sass/_realtors.scss */
@@ -182,19 +223,31 @@ body {
   justify-content: center;
   justify-items: center;
   row-gap: 2rem; }
-  /* line 13, sass/_realtors.scss */
+  @media only screen and (max-width: 50em) {
+    /* line 1, sass/_realtors.scss */
+    .realtors {
+      grid-column: 1/-1; } }
+  /* line 17, sass/_realtors.scss */
   .realtors__list {
     display: grid;
     grid-template-columns: min-content max-content;
     column-gap: 2rem;
     row-gap: 5vh;
     align-items: center; }
-  /* line 21, sass/_realtors.scss */
+    @media only screen and (max-width: 50em) {
+      /* line 17, sass/_realtors.scss */
+      .realtors__list {
+        grid-template-columns: repeat(3, min-content max-content); } }
+    @media only screen and (max-width: 37.5em) {
+      /* line 17, sass/_realtors.scss */
+      .realtors__list {
+        grid-template-columns: min-content max-content; } }
+  /* line 33, sass/_realtors.scss */
   .realtors__img {
     width: 7rem;
     border-radius: 50%;
     display: block; }
-  /* line 27, sass/_realtors.scss */
+  /* line 39, sass/_realtors.scss */
   .realtors__sold {
     text-transform: uppercase;
     color: #aaa;
@@ -209,20 +262,20 @@ body {
   gap: 6rem;
   align-items: start; }
 
-/* line 14, sass/_features.scss */
+/* line 13, sass/_features.scss */
 .feature {
   display: grid;
   grid-template-columns: min-content 1fr;
   row-gap: 1.5rem;
   column-gap: 2.5rem; }
-  /* line 20, sass/_features.scss */
+  /* line 19, sass/_features.scss */
   .feature__icon {
     fill: #c69963;
     width: 4.5rem;
     height: 4.5rem;
     grid-row: 1 / span 2;
     transform: translateY(-1rem); }
-  /* line 28, sass/_features.scss */
+  /* line 27, sass/_features.scss */
   .feature__text {
     font-size: 1.7rem; }
 
@@ -231,27 +284,43 @@ body {
   background-color: #c69963;
   grid-column: full-start / col-end 4;
   background-image: linear-gradient(rgba(198, 153, 99, 0.5), rgba(198, 153, 99, 0.5)), url(../img/back.jpg);
+  background-size: cover;
   display: grid;
   grid-template-rows: repeat(6, 1fr);
   grid-template-columns: repeat(6, 1fr);
   align-items: center; }
+  @media only screen and (max-width: 50em) {
+    /* line 2, sass/_story.scss */
+    .story__pictures {
+      grid-column: 1/-1;
+      padding: 6rem; } }
 
-/* line 17, sass/_story.scss */
+/* line 23, sass/_story.scss */
 .story__img--1 {
   width: 100%;
   grid-row: 2/6;
   grid-column: 2/6;
   box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.1); }
+  @media only screen and (max-width: 50em) {
+    /* line 23, sass/_story.scss */
+    .story__img--1 {
+      grid-column: 1/5;
+      grid-row: 1/-1; } }
 
-/* line 25, sass/_story.scss */
+/* line 38, sass/_story.scss */
 .story__img--2 {
   width: 115%;
   grid-row: 4/6;
   grid-column: 4/7;
   z-index: 20;
   box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.2); }
+  @media only screen and (max-width: 50em) {
+    /* line 38, sass/_story.scss */
+    .story__img--2 {
+      grid-row: 1/-1;
+      width: 100%; } }
 
-/* line 34, sass/_story.scss */
+/* line 52, sass/_story.scss */
 .story__content {
   background-color: #f9f7f6;
   grid-column: col-start 5 / full-end;
@@ -259,8 +328,13 @@ body {
   display: grid;
   align-content: center;
   justify-items: start; }
+  @media only screen and (max-width: 50em) {
+    /* line 52, sass/_story.scss */
+    .story__content {
+      grid-column: 1/-1;
+      grid-row: 5/6; } }
 
-/* line 50, sass/_story.scss */
+/* line 73, sass/_story.scss */
 .story__text {
   font-size: 1.5rem;
   font-style: italic;
